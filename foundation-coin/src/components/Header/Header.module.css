@@ -1,0 +1,92 @@
+/* src/components/Header/Header.module.css */
+
+.header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.85); /* Semi-transparent background */
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    color: white; /* Keep the logo text white */
+    font-size: 2rem; /* Larger font size for the logo */
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 23rem; /* Increased left margin to push logo right */
+    margin-right: auto;
+    flex-grow: 1; /* Allows logo to take up more space if needed */
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1; /* Allows nav to take up more space if needed */
+    margin-right: 30rem; /* Increased right margin to push nav left */
+  }
+  
+  .navList {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem; /* Gap between nav items */
+    margin: 0;
+    padding: 0;
+  }
+
+  .navItem {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: relative; /* For dropdown positioning */
+    color: rgba(255, 255, 255, 0.5); /* Grey out nav items */
+  }
+  
+  .navItem:hover {
+    color: #ff3e00; /* Highlight color similar to Solana's button color */
+  }
+
+  .arrow {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .up {
+    transform: rotate(180deg);
+  }
+  
+.dropdownContent {
+  display: block;
+  position: absolute;
+  background-color: #262626; /* Dark background for dropdown */
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 4px; /* Rounded corners for dropdown */
+  top: 100%; /* Position below the nav item */
+  left: 0;
+  margin-top: 0.5rem; /* Spacing between nav item and dropdown */
+  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+  
+  .navItem:hover .dropdownContent {
+    display: block; /* Display dropdown on hover */
+  }
+  
+  @media (max-width: 768px) {
+    .navList {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .logo, .nav {
+      margin-left: 1rem;
+      margin-right: 1rem;
+      flex-grow: 0; /* Do not allow flex-grow on smaller screens */
+    }
+  }
+  

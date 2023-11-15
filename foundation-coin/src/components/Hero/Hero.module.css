@@ -1,0 +1,76 @@
+/* src/components/Hero/Hero.module.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+.hero {
+  background: linear-gradient(145deg, #3a1c71, #d76d77, #ffaf7b);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.ctaContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Base button styles */
+.button {
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  text-transform: uppercase;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  border: none; /* Remove border for all buttons */
+}
+
+/* Primary button styles with gradient and animation */
+.ctaButton {
+  background: linear-gradient(135deg, #7b2ff7, #f107a3);
+  color: white;
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.11);
+}
+
+.ctaButton:hover,
+.ctaButton:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Secondary button styles */
+.ctaButtonSecondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.ctaButtonSecondary:hover,
+.ctaButtonSecondary:focus {
+  background: white;
+  color: #7b2ff7;
+  transform: translateY(-3px);
+}
