@@ -1,0 +1,28 @@
+.footer {
+    background-color: #0e0e10;
+    color: white;
+    padding: 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .footerSection h5 {
+    margin-bottom: 1rem;
+    font-weight: bold;
+  }
+  
+  .footerSection p,
+  .footerSection a {
+    color: #a7a7a7;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+  }
+  
+  /* Add more styles as per your requirement */
+  

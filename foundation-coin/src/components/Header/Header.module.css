@@ -58,20 +58,32 @@
     transform: rotate(180deg);
   }
   
-.dropdownContent {
-  display: block;
-  position: absolute;
-  background-color: #262626; /* Dark background for dropdown */
-  min-width: 160px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  border-radius: 4px; /* Rounded corners for dropdown */
-  top: 100%; /* Position below the nav item */
-  left: 0;
-  margin-top: 0.5rem; /* Spacing between nav item and dropdown */
-  z-index: 1;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-}
+  .dropdownContent {
+    display: block;
+    position: absolute;
+    background-color: #000; /* Match Solana's dark theme */
+    color: #fff; /* White text color */
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    padding: 0; /* Remove padding */
+    border-radius: 4px;
+    top: 100%;
+    left: 0;
+    margin-top: 0.5rem;
+    z-index: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+  }
+  
+  .dropdownContent li {
+    padding: 0.75rem 1rem; /* Padding for each dropdown item */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    list-style: none; /* Remove bullets */
+  }
+  
+  .dropdownContent li:hover {
+    background-color: #333; /* Lighter background on hover */
+  }
   
   .navItem:hover .dropdownContent {
     display: block; /* Display dropdown on hover */
@@ -81,6 +93,7 @@
     .navList {
       flex-direction: column;
       align-items: flex-start;
+      margin-left: 1rem; /* Increased left margin to push nav left */
     }
   
     .logo, .nav {
