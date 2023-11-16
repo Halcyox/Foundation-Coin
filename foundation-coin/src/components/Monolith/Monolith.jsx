@@ -1,55 +1,86 @@
-// src/components/Monolith/MonolithScene.jsx
-
-import React, { useRef, useState, Children } from 'react';
+import React, { useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
+import * as THREE from 'three'; // Import THREE
+
 
 const SpinningMonolith = ({ position, children }) => {
-    const monolithRef = useRef();
-    const [isSpinning, setIsSpinning] = useState(true);
-  
-    useFrame(() => {
-      if (monolithRef.current && isSpinning) {
-        monolithRef.current.rotation.y += 0.01;
-      }
-    });
-  
-    const handleHover = (hovered) => {
-      setIsSpinning(!hovered);
-    };
-  
-    return (
-      <mesh
-        ref={monolithRef}
-        position={position}
-        onPointerOver={() => handleHover(true)}
-        onPointerOut={() => handleHover(false)}
-      >
-        <boxGeometry args={[2, 6, 0.5]} />
-        <meshStandardMaterial color="silver" metalness={1} roughness={0.2} />
-  
-        {/* Add an iframe on one face of the monolith */}
-        <Html scaleFactor={10} style={{ pointerEvents: 'none' }}>
-          <div className="iframe-container" style={{ width: '200px', height: '150px', transform: 'translateZ(3.1px)' }}>
-            {/** Add iframe content as a child */}
-            {Children.toArray(children)}
-          </div>
-        </Html>
-      </mesh>
-    );
+  const monolithRef = useRef();
+  const [isSpinning, setIsSpinning] = useState(true);
+  const [iframeStyle, setIframeStyle] = useState({});
+
+  useFrame(() => {
+    if (monolithRef.current && isSpinning) {
+      monolithRef.current.rotation.y += 0.01;
+    }
+  });
+
+  const handleHover = (hovered) => {
+    setIsSpinning(!hovered);
   };
-  
-  const MonolithScene = ({ position, children }) => {
-    return (
-      <Canvas shadows>
-        <ambientLight intensity={0.1} />
-        <spotLight intensity={5000} angle={0.4} penumbra={0.2} position={[0, 5, 5]} castShadow />
-        <SpinningMonolith position={position} children={children}>
-          {/* Access children directly */}
+
+  useFrame(({ camera }) => {
+    if (monolithRef.current) {
+      // Get the world position of the 3D object
+      const worldPosition = new THREE.Vector3();
+      monolithRef.current.getWorldPosition(worldPosition);
+
+      // Calculate the position of the iframe overlay
+      const screenPosition = worldPosition.clone().project(camera);
+      const x = (screenPosition.x + 1) / 2 * window.innerWidth;
+      const y = (-screenPosition.y + 1) / 2 * window.innerHeight;
+
+      // Set the position of the iframe overlay
+      setIframeStyle({
+        position: 'absolute',
+        transform: `translate(-50%, -50%) translate(${x}px, ${y}px)`,
+      });
+    }
+  });
+
+  return (
+    <mesh
+      ref={monolithRef}
+      position={position}
+      onPointerOver={() => handleHover(true)}
+      onPointerOut={() => handleHover(false)}
+    >
+      <boxGeometry args={[2, 6, 0.5]} />
+      <meshStandardMaterial color="silver" metalness={1} roughness={0.2} />
+
+      {/* This HTML element will overlay the 3D canvas */}
+      <Html style={{ pointerEvents: 'none', ...iframeStyle }}>
+        <div className="iframe-container" style={{ width: '200px', height: '150px' }}>
           {children}
-        </SpinningMonolith>
-      </Canvas>
-    );
-  };
-  
-  export default MonolithScene;
+        </div>
+      </Html>
+    </mesh>
+  );
+};
+
+const MonolithScene = ({ position, children }) => {
+  return (
+    <Canvas shadows>
+      <ambientLight intensity={0.1} />
+      <spotLight intensity={5000} angle={1} penumbra={0.2} position={[0, 0, 5]} castShadow />
+      <SpinningMonolith position={position}>
+        {children}
+      </SpinningMonolith>
+    </Canvas>
+  );
+};
+
+export default MonolithScene;
+
+// {monolithPositions.map((position, index) => (
+//     <div key={index}>
+//       <MonolithScene position={position}>
+//         {/** Add your iframe content here */}
+//         <iframe
+//           title={`iframe-${index}`}
+//           src={`data:text/html,<html><body><p>This is some text on the iframe.</p></body></html>`}
+//           style={{ width: '100%', height: '100%' }}
+//         ></iframe>
+//       </MonolithScene>
+//     </div>
+//   ))}
