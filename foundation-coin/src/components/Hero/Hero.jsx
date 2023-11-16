@@ -16,21 +16,20 @@ const Hero = () => {
 
   return (
     <div className={styles.hero}>
-      <h1 className={styles.title}>Beyond Boundaries: <br /> Blockchain for the Cosmos</h1>
-
       {/* New Dramatic Sections for Content */}
+      <h1 className={styles.title}>Foundation Coin</h1>
       <section className={styles.dramaticSection}>
-        <h2>An Interplanetary Ledger</h2>
+        {/* <h2>An Interplanetary Ledger</h2> */}
         <p>Foundation Coin’s blockchain structure takes into account the variable orbital distance of the planets in realtime, as this creates unique ledger syncing delays not accounted for by the original Bitcoin whitepaper.</p>
-        <p>It’s SWIFT for the Solar System. An architecture being built today—for tomorrow.</p>
-        <a href="/whitepaper1" className={styles.whitePaperLink}>White Paper 1</a>
+        <p> It’s SWIFT for the Solar System. An architecture being built today—for tomorrow.</p>
+        <a href="https://www.foundationcoin.com/s/FC3.pdf" className={styles.whitePaperLink}>White Paper 1</a>
       </section>
 
       <div className={styles.contentBox}>
-        <p className={styles.subtitle}>
+        {/* <p className={styles.subtitle}>
           Empowering interplanetary connections.
         </p>
-        <button className={`${styles.button} ${styles.ctaButton}`}>Explore Tech</button>
+        <button className={`${styles.button} ${styles.ctaButton}`}>Explore Tech</button> */}
 
         <div>
           <br />
@@ -39,22 +38,9 @@ const Hero = () => {
         </div>
       </div>
 
-      <section className={styles.dramaticSection}>
-        <h2>An Artificial Intelligence Central Bank</h2>
-        <p>Satoshi’s Whitepaper had an implicit mechanism for the “monetary supply” of Bitcoins, in the coinbase transaction / block reward. This architecture, while successful, was a rigid design not adaptable to changing world conditions such as dynamic prices of electricity and the coin value itself vis a vis other currencies.</p>
-        <p>Dynamic block rewards, guided by AI, for the evolutions of today and tomorrow.</p>
-        <a href="/whitepaper2" className={styles.whitePaperLink}>White Paper 2</a>
-      </section>
-
-      <section className={styles.dramaticSection}>
-        <h3>A Cleaner Home Base</h3>
-        <p>Foundation Coin requires that each mined block is matched with an associated carbon offset, paid for by miners, proportional to the estimated electricity cost.</p>
-        <p>Fueling the future, not burning the present.</p>
-      </section>
-
       {/* <div className={styles.imagePlaceholder}></div> */}
 
-      {monolithPositions.map((position, index) => (
+      {/* {monolithPositions.map((position, index) => (
         <div key={index}>
           <MonolithScene position={position}>
             <iframe
@@ -64,7 +50,26 @@ const Hero = () => {
             ></iframe>
           </MonolithScene>
         </div>
-      ))}
+      ))} */}
+
+      {/* Monolith Container */}
+      <div className={styles.monolithContainer}>
+        <div className={styles.monolith}>
+          <section className={styles.dramaticSection}>
+            <h2>An Artificial Intelligence Central Bank</h2>
+            <p>Satoshi had an implicit mechanism for the “monetary supply” of Bitcoins, in the coinbase transaction/block reward.</p>
+            <a href="https://www.foundationcoin.com/s/FC-Final.pdf" className={styles.whitePaperLink}>White Paper 2</a>
+            <p>Foundation Coin has dynamic block rewards, guided by AI</p>
+            
+          </section>
+        </div>
+      </div>
+
+      <section className={styles.dramaticSection}>
+        <h3>A Cleaner Home Base</h3>
+        <p>Foundation Coin requires that each mined block is matched with an associated carbon offset, paid for by miners, proportional to the estimated electricity cost.</p>
+        <p>Fueling the future, not burning the present.</p>
+      </section>
 
       {/* Image Container */}
       <div className={styles.imageContainer}>
@@ -75,15 +80,13 @@ const Hero = () => {
       <div className={styles.contentBox}>
         <h2>More experiments coming soon</h2>
         {/* <a href="#content" className={styles.skipToContent}>Skip to Content</a> */}
-          <p className={styles.subtitle}>
+          {/* <p className={styles.subtitle}>
             Innovate. Scale. Thrive.
-          </p>
-          <button className={`${styles.button} ${styles.ctaButtonSecondary}`}>View Roadmap</button>
+          </p> */}
+          {/* <button className={`${styles.button} ${styles.ctaButtonSecondary}`}>View Roadmap</button> */}
         </div>
-
       {/* Additional Content Sections */}
       <div className={styles.additionalContent}>
-        
 
         
       </div>

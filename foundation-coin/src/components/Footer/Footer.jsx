@@ -5,9 +5,9 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
-        <div className={styles.footerSection}>
+        {/* <div className={styles.footerSection}>
           <p className={styles.managedBy}>Managed by Foundation Systems</p>
-        </div>
+        </div> */}
         <div className={styles.footerSection}>
           <h5>FOUNDATION COIN</h5>
           <ul className={styles.linkList}>
@@ -16,7 +16,7 @@ const Footer = () => {
             <li><a href="mailto:employment@foundationcoin.com">Careers</a></li>
           </ul>
         </div>
-        <div className={styles.footerSection}>
+        {/* <div className={styles.footerSection}>
           <h5>GET CONNECTED</h5>
           <ul className={styles.linkList}>
             <li><a href="#">CS</a></li>
@@ -26,7 +26,7 @@ const Footer = () => {
             <li><a href="#">Administrative</a></li>
             <li><a href="#">Technical Operations</a></li>
           </ul>
-        </div>
+        </div> */}
       </div>
       <div className={styles.footerBottom}>
         <p>©2023 FoundationCoin Inc. - All rights reserved</p>

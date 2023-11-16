@@ -32,7 +32,7 @@ const RotatingCoin = () => {
         {...bind()}
         ref={coinRef}
         args={[1, 1, 0.1, 32]}
-        rotation={[0, 0, Math.PI / 2]}
+        rotation={[0, 0, Math.PI]}
         scale={[0.3, 0.3, 0.3]}
       >
         <meshStandardMaterial map={texture} metalness={0.95} roughness={0.001} />
@@ -64,7 +64,7 @@ const Scene = () => {
         }}
         style={{ width: '100%', height: '35vh' }} // Set the size of the Canvas
       >
-        <ambientLight intensity={0.5} />
+        <ambientLight intensity={0} />
         <RotatingCoin />
       </Canvas>
     </div>
