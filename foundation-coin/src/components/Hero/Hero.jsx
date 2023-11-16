@@ -4,6 +4,8 @@ import styles from './Hero.module.css';
 import MonolithScene from '../Monolith/Monolith'; // Adjust the import path
 import CoinModel from '../CoinModel/CoinModel'; // Adjust the import path
 import RotatingRing from '../Ring/Ring';
+import earthSunriseImage from './earthsunrise.png'; // Import the image
+
 
 const Hero = () => {
   const monolithPositions = [
@@ -63,6 +65,12 @@ const Hero = () => {
           </MonolithScene>
         </div>
       ))}
+
+      {/* Image Container */}
+      <div className={styles.imageContainer}>
+        {/* Import the image using the 'earthSunriseImage' variable */}
+        <img src={earthSunriseImage} alt="Earth Sunrise" style={{ width: '100%', height: 'auto', maxWidth: '500px' }} />
+      </div>
 
       <div className={styles.contentBox}>
         <h2>More experiments coming soon</h2>
