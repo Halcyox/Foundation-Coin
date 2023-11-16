@@ -13,7 +13,7 @@
   text-align: center;
   position: relative;
   padding-top: 10vh; /* Adjust this value to suit your needs */
-  padding-bottom: 100rem; /* gonna need to adjust */
+  padding-bottom: 85rem; /* gonna need to adjust */
 }
 
 
@@ -161,7 +161,7 @@ body {
     justify-content: center;
     align-items: center;
     /* background: black; Background color */
-    height: 100vh; /* Adjust the height as needed */
+    height: flex; /* Adjust the height as needed */
     padding-top: 10vh; /* Adjust this value to suit your needs */
     padding-bottom: 10vh; /* Adjust this value to suit your needs */
   }

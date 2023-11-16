@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer';
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Hero />
       <Footer />
       {/* Add other components here */}

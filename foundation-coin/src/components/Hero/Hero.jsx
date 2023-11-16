@@ -55,20 +55,19 @@ const Hero = () => {
       {/* Monolith Container */}
       <div className={styles.monolithContainer}>
         <div className={styles.monolith}>
-          <section className={styles.dramaticSection}>
+          <section className={styles.dramaticSection} alignment = "centered">
             <h2>An Artificial Intelligence Central Bank</h2>
             <p>Satoshi had an implicit mechanism for the “monetary supply” of Bitcoins, in the coinbase transaction/block reward.</p>
-            <a href="https://www.foundationcoin.com/s/FC-Final.pdf" className={styles.whitePaperLink}>White Paper 2</a>
             <p>Foundation Coin has dynamic block rewards, guided by AI</p>
-            
+            <a href="https://www.foundationcoin.com/s/FC-Final.pdf" className={styles.whitePaperLink}>White Paper 2</a>
           </section>
         </div>
       </div>
 
       <section className={styles.dramaticSection}>
-        <h3>A Cleaner Home Base</h3>
-        <p>Foundation Coin requires that each mined block is matched with an associated carbon offset, paid for by miners, proportional to the estimated electricity cost.</p>
-        <p>Fueling the future, not burning the present.</p>
+        <h2>A Cleaner Home Base</h2>
+            <p>Foundation Coin requires that each mined block is matched with an associated carbon offset, paid for by miners, proportional to the estimated electricity cost.</p>
+            <p>Fueling the future, not burning the present.</p>
       </section>
 
       {/* Image Container */}
