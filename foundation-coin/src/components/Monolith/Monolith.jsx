@@ -45,7 +45,7 @@ const SpinningMonolith = ({ position, children }) => {
       onPointerOver={() => handleHover(true)}
       onPointerOut={() => handleHover(false)}
     >
-      <boxGeometry args={[2, 6, 0.5]} />
+      <boxGeometry args={[4, 9, 1]} />
       <meshStandardMaterial color="silver" metalness={1} roughness={0.2} />
 
       {/* This HTML element will overlay the 3D canvas */}

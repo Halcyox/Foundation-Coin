@@ -13,6 +13,7 @@
   text-align: center;
   position: relative;
   padding-top: 10vh; /* Adjust this value to suit your needs */
+  padding-bottom: 85rem;
 }
 
 
@@ -27,10 +28,13 @@ body {
 }
 
 .subtitle {
-  font-size: 1.5rem;
-  max-width: 600px;
-  margin-bottom: 2rem;
+  font-size: 1.5rem; /* Adjust the font size as needed */
+  color: #ffffff; /* Change color if needed */
+  margin-bottom: 2rem; /* Adjust the spacing as needed */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Optional: Add text shadow for depth */
+  /* Add any additional styling here */
 }
+
 
 .ctaContainer {
   display: flex;
@@ -39,15 +43,23 @@ body {
 
 /* Base button styles */
 .button {
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 1rem 2rem; /* Adjust padding as needed */
+  border-radius: 30px; /* Adjust border-radius as needed */
+  font-size: 1rem; /* Adjust font size as needed */
+  font-weight: 600; /* Adjust font weight as needed */
   cursor: pointer;
   outline: none;
   text-transform: uppercase;
   transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
   border: none; /* Remove border for all buttons */
+  background: linear-gradient(135deg, #7b2ff7, #f107a3); /* Adjust gradient as needed */
+  color: white; /* Adjust text color as needed */
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.11); /* Adjust shadow as needed */
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Primary button styles with gradient and animation */
@@ -87,11 +99,13 @@ body {
 }
 
 .contentBox {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 2rem;
-    margin-bottom: 2rem;
-  }
+  
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  /* ... other styles ... */
+}
+
   
   .imagePlaceholder {
     width: 80%;
@@ -101,3 +115,42 @@ body {
     border-radius: 8px;
     margin: 2rem auto;
   }
+
+  .dramaticSection {
+    margin: 3rem auto;
+    padding: 2rem;
+    max-width: 800px; /* Set a max-width for better readability */
+    background: rgba(21, 5, 53, 0.8); /* Slight transparency */
+    border-radius: 8px;
+    backdrop-filter: blur(5px); /* Soft blur effect */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  }
+  
+  .dramaticSection h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for dramatic effect */
+  }
+  
+  .dramaticSection p {
+    font-size: 1.25rem;
+    color: #ddd;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .dramaticSection a {
+    font-size: 1rem;
+    color: #7b2ff7;
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor; /* Underline effect */
+  }
+  
+  .dramaticSection a:hover {
+    color: #9b4dff;
+    border-bottom-style: solid; /* Solid underline on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
+  }
+  
