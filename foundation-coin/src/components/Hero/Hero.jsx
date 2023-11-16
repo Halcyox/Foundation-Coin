@@ -2,17 +2,41 @@
 
 import React from 'react';
 import styles from './Hero.module.css';
+import MonolithScene from '../Monolith/Monolith'; // Adjust the import path
 
 const Hero = () => {
+  const monolithPositions = [
+    [0, 0, 0],
+    [-4, 0, 0], // Example position, you can change it as needed
+    [4, 0, 0],  // Example position, you can change it as needed
+    // Add more positions here
+  ];
+
   return (
     <div className={styles.hero}>
-      <h1 className={styles.title}>Made For Developers. <br></br>Interplanetary Scale. <br></br>Fast for everyone.</h1>
-      <p className={styles.subtitle}>Time to bring blockchain to the whole solar system. Foundation Coin supports experiences across vast distances, everyday users, and all the rest.</p>
-      <div className={styles.ctaContainer}>
-        {/* Use ctaButton classes for primary button styles */}
-        <button className={`${styles.button} ${styles.ctaButton}`}>Start Building</button>
-        {/* Use ctaButtonSecondary for secondary button styles */}
-        <button className={`${styles.button} ${styles.ctaButtonSecondary}`}>Read Docs</button>
+      <h1 className={styles.title}>Beyond Boundaries: <br/> Blockchain for the Cosmos</h1>
+      <div className={styles.contentBox}>
+        <p className={styles.subtitle}>
+          Empowering interplanetary connections.
+        </p>
+        <button className={`${styles.button} ${styles.ctaButton}`}>Explore Tech</button>
+        
+        {monolithPositions.map((position, index) => (
+          <div key={index}>
+            <MonolithScene position={position}>
+              {/** Add your iframe content here */}
+              <iframe title="empty" src="about:blank" style={{ width: '100%', height: '100%' }}></iframe>
+            </MonolithScene>
+          </div>
+        ))}
+      </div>
+
+      <div className={styles.imagePlaceholder}></div>
+      <div className={styles.contentBox}>
+        <p className={styles.subtitle}>
+          Innovate. Scale. Thrive.
+        </p>
+        <button className={`${styles.button} ${styles.ctaButtonSecondary}`}>View Roadmap</button>
       </div>
     </div>
   );

@@ -22,7 +22,7 @@ const Header = () => {
       <span className={`${styles.arrow} ${isDropdownOpen[section] ? styles.up : ''}`}>&#9662;</span>
       {isDropdownOpen[section] && (
         <ul className={styles.dropdownContent}>
-          <li>Item 1</li>
+          <li>Thanks for clickin'</li>
           <li>Item 2</li>
           <li>Item 3</li>
           {/* Add more dropdown items here */}
