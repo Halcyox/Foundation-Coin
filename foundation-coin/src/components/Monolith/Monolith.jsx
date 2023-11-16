@@ -45,7 +45,7 @@ const SpinningMonolith = ({ position, children }) => {
       onPointerOver={() => handleHover(true)}
       onPointerOut={() => handleHover(false)}
     >
-      <boxGeometry args={[4, 9, 1]} />
+      <boxGeometry args={[2.4, 5.4, 0.6]} />
       <meshStandardMaterial color="silver" metalness={1} roughness={0.2} />
 
       {/* This HTML element will overlay the 3D canvas */}
@@ -60,7 +60,10 @@ const SpinningMonolith = ({ position, children }) => {
 
 const MonolithScene = ({ position, children }) => {
   return (
-    <Canvas shadows>
+    <Canvas
+      style={{ width: '100%', height: '20vh' }} // Set the canvas size here
+      camera={{ fov: 50, near: 0.1, far: 1000, position: [0, 0, 0] }} // Adjust the camera properties
+    shadows>
       <ambientLight intensity={0.1} />
       <spotLight intensity={5000} angle={1} penumbra={0.2} position={[0, 0, 5]} castShadow />
       <SpinningMonolith position={position}>

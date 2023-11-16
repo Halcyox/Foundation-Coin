@@ -66,7 +66,7 @@ const Hero = () => {
 
       <div className={styles.contentBox}>
         <h2>More experiments coming soon</h2>
-        <a href="#content" className={styles.skipToContent}>Skip to Content</a>
+        {/* <a href="#content" className={styles.skipToContent}>Skip to Content</a> */}
           <p className={styles.subtitle}>
             Innovate. Scale. Thrive.
           </p>
