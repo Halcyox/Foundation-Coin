@@ -54,7 +54,7 @@ const Hero = () => {
 
       {/* <div className={styles.imagePlaceholder}></div> */}
 
-      {monolithPositions.map((position, index) => (
+      {/* {monolithPositions.map((position, index) => (
         <div key={index}>
           <MonolithScene position={position}>
             <iframe
@@ -64,7 +64,13 @@ const Hero = () => {
             ></iframe>
           </MonolithScene>
         </div>
-      ))}
+      ))} */}
+      {/* PLEASE ADD NEW CONTAINER */}
+      {/* Monolith Container */}
+      <div className={styles.monolithContainer}>
+        <div className={styles.monolith}></div>
+      </div>
+
 
       {/* Image Container */}
       <div className={styles.imageContainer}>
